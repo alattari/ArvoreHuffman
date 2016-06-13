@@ -4,7 +4,7 @@ abstract class arvoreHuffman implements Comparable<arvoreHuffman> {
     	frequencia = freq; 
     	}
  
-    // comparando na frequencia
+    // comparando as frequencias
     public int compareTo(arvoreHuffman arvore) {
         return frequencia - arvore.frequencia;
     }
