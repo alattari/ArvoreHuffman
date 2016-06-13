@@ -6,11 +6,13 @@ public class codigoHuffman {
     public static arvoreHuffman montaArvore(int[] charFreqs) {
         PriorityQueue<arvoreHuffman> arvore = new PriorityQueue<arvoreHuffman>();
         
-        for (int i = 0; i < charFreqs.length; i++)// iniciando com folhas para cada caracter preenchido
+        for (int i = 0; i < charFreqs.length; i++){// iniciando com folhas para cada caracter preenchido
             if (charFreqs[i] > 0)
-                arvore.offer(new folhaHuffman(charFreqs[i], (char)i));
+                arvore.offer(new folhaHuffman(charFreqs[i], (char)i));//inserir elemento na lista de prioridade
+        	
+        } 
  
-        assert arvore.size() > 0;
+        assert arvore.size() > 0; //verificando
         
         while (arvore.size() > 1) {
         	// fica no loop ate ter 1 arvore sobrando
