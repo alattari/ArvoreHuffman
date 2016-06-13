@@ -12,21 +12,20 @@ public class codigoHuffman {
         	
         } 
  
-        assert arvore.size() > 0; //verificando
         
         while (arvore.size() > 1) {
         	// fica no loop ate ter 1 arvore sobrando
             // remove os nós com menor frequencia
-            arvoreHuffman a = arvore.poll();
-            arvoreHuffman b = arvore.poll();
+            arvoreHuffman a = arvore.remove();
+            arvoreHuffman b = arvore.remove();
             
-            arvore.offer(new noHuffman(a, b));// coloca na arvore um novo nó e reinsere na fila
+            arvore.add(new noHuffman(a, b));// coloca na arvore um novo nó e reinsere na fila
         }
-        return arvore.poll();
+        return arvore.remove();
     }
     
     public static void printaCodigo(arvoreHuffman arvore, StringBuffer prefixo) {
-        assert arvore != null;
+        
         if (arvore instanceof folhaHuffman) {
             folhaHuffman folha = (folhaHuffman)arvore;
  
