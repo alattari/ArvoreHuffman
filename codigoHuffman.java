@@ -6,7 +6,7 @@ public class codigoHuffman {
     public static arvoreHuffman montaArvore(int[] charFreqs) {
         PriorityQueue<arvoreHuffman> arvore = new PriorityQueue<arvoreHuffman>();
         
-        for (int i = 0; i < charFreqs.length; i++){// iniciando com folhas para cada caracter preenchido
+        for (int i = 0; i < charFreqs.length; i++){// cria as folhas para cada caracter que aparece
             if (charFreqs[i] > 0)
                 arvore.offer(new folhaHuffman(charFreqs[i], (char)i));//inserir elemento na lista de prioridade
         	
@@ -16,7 +16,7 @@ public class codigoHuffman {
         
         while (arvore.size() > 1) {
         	// fica no loop ate ter 1 arvore sobrando
-            // remove as arvores com menor frequencia
+            // remove os nós com menor frequencia
             arvoreHuffman a = arvore.poll();
             arvoreHuffman b = arvore.poll();
             
