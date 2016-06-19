@@ -53,18 +53,16 @@ public class codigoHuffman {
 		RandomAccessFile r = new RandomAccessFile("","r");//preencher com o diretorio
         int[] charFreqs = new int[256];
         
-        while (r.length() > r.getFilePointer())// le cada caracter e guarda a frequencia 
-        	{
-        	
+        while (r.length() > r.getFilePointer()){// le cada caracter e guarda a frequencia 
             charFreqs[r.read()] ++;
-        
+        	}
         // constroi arvore
         arvoreHuffman arvore = montaArvore(charFreqs);
             
         // printando
         System.out.println("Caracter\tFrequencia\tPrefixo");
         printaCodigo(arvore, new StringBuffer());
-        }
+        
 	}catch(Exception e){
         e.printStackTrace();
         System.out.print(e.getLocalizedMessage());
